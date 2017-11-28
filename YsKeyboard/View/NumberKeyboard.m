@@ -11,8 +11,8 @@
 @implementation NumberKeyboard
 
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
+-(void)awakeFromNib{
+    [super awakeFromNib];
     [self CustomViewSetting];
 }
 
