@@ -8,22 +8,31 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    // 全局隐藏键盘
+    [UITextField appearance].inputView = [[UIView alloc]initWithFrame:CGRectZero];
+    
+    
+    UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(50, 100, 100, 40)];
+    field.backgroundColor = [UIColor orangeColor];
+    field.delegate = self;
+    [self.view addSubview:field];
+    
+    
+    NumView = [[NumberKeyboard alloc]initWithFrame:CGRectMake(10, 200, 300, 300)];
+    NumView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:NumView];
+    
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    NumView.Field = textField;
 }
-
 
 @end
