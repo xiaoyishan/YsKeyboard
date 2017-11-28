@@ -71,12 +71,7 @@
         if ([_Field.text containsString:@"."] && [Link isEqual:@"."]){
             NSLog(@"重复输入小数点!");
         }else{
-            
-            // 小数点补位 首次输入"."
-            if([Link isEqual:@"."] && [_Field.text isEqual:@""]){
-                [_Field insertText:@"0"];
-            }
-            
+
             [_Field insertText:Link];
             
             // 小数点补位 光标前移
